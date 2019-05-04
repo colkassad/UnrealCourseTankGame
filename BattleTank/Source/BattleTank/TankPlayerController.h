@@ -21,6 +21,7 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
+private:
     //Start the tank moving the barrel so that the 
     //shot would hit where the crosshair intersects the world
     void AimTowardsCrosshair();
@@ -28,4 +29,11 @@ public:
 
     //Return and OUT parameter, true if hit landscape
     bool GetSightRayHitLocation(FVector& HitLocation) const;
+
+    UPROPERTY(EditAnywhere)
+    float CrossHairXLocation = 0.5;
+
+    UPROPERTY(EditAnywhere)
+    float CrossHairYLocation = 0.33333;
+
 };
