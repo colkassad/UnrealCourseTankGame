@@ -2,9 +2,11 @@
 
 #pragma once
 
+
 #include "CoreMinimal.h"
+#include "TankAimingComponent.h"
 #include "GameFramework/Pawn.h"
-#include "Tank.generated.h"
+#include "Tank.generated.h" //put new includes above this one, this one must be last
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -14,13 +16,12 @@ class BATTLETANK_API ATank : public APawn
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+    // Called every frame
+    virtual void Tick(float DeltaTime) override;
     ATank* Tank;
-    
+    UTankAimingComponent* TankAimingComponent = nullptr;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
     
