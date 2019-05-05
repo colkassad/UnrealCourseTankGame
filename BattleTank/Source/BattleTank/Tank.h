@@ -18,9 +18,9 @@ class BATTLETANK_API ATank : public APawn
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-    // Called every frame
-    virtual void Tick(float DeltaTime) override;
+
     ATank* Tank;
+
     UTankAimingComponent* TankAimingComponent = nullptr;
 
 public:	
